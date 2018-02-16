@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 # GOBOT
+=======
+# GoBot
+>>>>>>> e7a9d34772bb852f4efbcda008b9cc230f991f6b
 
 ## Description
-GOBOT is meant to be a Go game program written in C++ language, which can play go with human. No cmake was used yet.
+GOBOT is meant to be a simple Go game program written in C++ language, which can play go with human.
 
 ## Usage
 Usage was not defined yet.
