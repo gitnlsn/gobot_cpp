@@ -1,45 +1,38 @@
-#include <iostream>
-#include <string>
-#include "communicationInterface.h"
-
 using namespace std;
 
-#define CMD_NONE  0
-#define CMD_EXIT  1
-#define CMD_MOVE  2
-#define CMD_BOARD 3
-#define CMD_UNDO  4
-#define CMD_STAT  5
+#include <iostream>
+#include <string>
+#include "../headers/commands.h"
+#include "../headers/userInterface.h"
 
+// TODO: create proper errors header after listing all important errors
 #define ERROR_NONE   0
 #define ERROR_FOUND  1
 
-int get_command(char* args);
-int read_input(string input);
-int indentify_command(string input);
-int read_Position(int position[]);
 
-//jfkalkjfdsalçjfdskaldfjçsaljfçaskljfkkasdçlfddsa
+// 1) get_command
+int get_command(){
 
-int get_command(char* args){
-   
-   // declarations
+   //declaration
    int      error    = ERROR_NONE;
-   int      command  = CMD_NONE;
    string   input;
    
-   // processement
+   // processing
    error    = read_input(input);
-   command  = indentify_command(input);
+   return indentify_command(input);
    
 }// end - get_input
 
-int read_input(string input){
+// 2) read_input
+int read_input(string &input){
+// TODO: command invalid
    cin >> input;
    return 0;
 }// end - read_input
 
+// 3) indentify_command
 int indentify_command(string input){
+   // cout << input << endl;
    if (input == "m") return CMD_MOVE;
    if (input == "s") return CMD_STAT;
    if (input == "u") return CMD_UNDO;
@@ -48,9 +41,12 @@ int indentify_command(string input){
    return CMD_NONE;
 }// end indentify_command
 
+// 4) read_Position
 int read_Position(int position[]){
    int pos_x, pos_y;
    cin >> pos_x;
    cin >> pos_y;
    return ERROR_NONE;
 }// end - get_args
+
+// TODO: misses output interfaces

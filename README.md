@@ -1,34 +1,45 @@
 # GoBot
 
 ## Description
-GOBOT is meant to be a simple Go game program written in C++ language, which can play go with human.
+This program is meant to be a simple Go game program written in C++ language, which can play go with a human. At first it will have CLI only. Later a python Qt GUI can be programed.
 
 ## Usage
-Usage was not defined yet.
+test and debug mode only.
 
 ## Components
 
 1. Game Storage (STO)
-   - Stores the game history
-   - Presents an interface to manipulate the game.
+   - Stores the game history and possible sequences
+   - Stores the game actual position
+   - atributtes value to board positions
+   - Presents an interface to manipulate the game
+      - user can play a move
+      - user can undo a move
 
-2. Communication Interface (COM)
+2. User Interface (UI)
    - CLI: command line interface
+      - CMD_MOVE:    user wants to play move
+      - CMD_STAT:    user wants to see game status
+      - CMD_UNDO:    user wants to undo move
+      - CMD_BOARD:   user wants to see board
+      - CMD_EXIT:    user wants to quit the program
 
 3. Main Controller (MC)
-   - Receives the communication interface commands
-   - Process the commands
-   - Manipulates all componenst
+   - Implements state machine model
+   - Reads and Processes interface commands
 
 4. Computer Artificial Intelligence (CAI)
-   - Guess a move, which is supposed to be good.
-   - Estimates score
-   - 
+   - choose a move given the several possible sequences and related score estimations (AI_1)
+   - estimate score given a board position (AI_1)
+   - guess possible sequence of moves before proper estimation (AI_2)
+   - guess possible move before a proper estimation (AI_2)
+   
+*) AI_N indicates importance order
 
 ## MVC Architeture
-- Model: STO
-- View: COM
-- Controller: MC and CAI
+   - Model: STO
+   - View: UI
+   - Controller: MC and CAI
 
 We separate CAI from MC so that CAI can be given special attention.
 
