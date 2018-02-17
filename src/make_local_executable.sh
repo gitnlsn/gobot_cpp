@@ -1,3 +1,3 @@
 #!/bin/bash
 
-g++ main.cc userInterface.cc -o ../gobot
+g++ main.cc userInterface.cc -o ../gobot.out
