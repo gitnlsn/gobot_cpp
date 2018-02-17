@@ -2,8 +2,8 @@ using namespace std;
 
 #include <iostream>
 #include <string>
-#include "../headers/userInterface.h"
-#include "../headers/commands.h"
+#include "headers/userInterface.h"
+#include "headers/commands.h"
 
 // TODO: create proper input header if necessary
 #define ARGV_PROG_NAME  argv[0]

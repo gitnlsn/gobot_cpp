@@ -2,8 +2,8 @@ using namespace std;
 
 #include <iostream>
 #include <string>
-#include "../headers/commands.h"
-#include "../headers/userInterface.h"
+#include "headers/commands.h"
+#include "headers/userInterface.h"
 
 // TODO: create proper errors header after listing all important errors
 #define ERROR_NONE   0
