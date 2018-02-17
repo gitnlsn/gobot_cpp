@@ -1,5 +1,17 @@
 # GoBot
 
+## TODOs
+   - Controller
+      - Implement state machine model
+   - User Interface
+      - Implement proper CLI board with cout
+   - Computer AI
+      - Implement some random moves generator
+      - Implement floodfill algorithm for score estimator
+   - GameStorage
+      - Implement strutures to store the game history and possible moves
+      - Implement move play and undo
+
 ## Description
 This program is meant to be a simple Go game program written in C++ language, which can play go with a human. At first it will have CLI only. Later a python Qt GUI can be programed.
 
@@ -41,11 +53,11 @@ test and debug mode only.
    - View: UI
    - Controller: MC and CAI
 
-We separate CAI from MC so that CAI can be given special attention.
+We separated CAI from MC so that CAI can be given special attention.
 
 ## State Machine
 
-Since the program is run, it waits in iddle mode, where it waits the user to input a command.
+When the program runs, it waits in iddle mode, waiting the user to input a command.
 Main commands are supposed to be:
 
 1. show game status
