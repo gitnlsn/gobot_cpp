@@ -1,9 +1,12 @@
+#ifndef STO_H
+#define STO_H
+
 using namespace std;
 
 #include <cstddef>
 
-#include "headers/errors.h"
-#include "headers/gameStorage.h"
+#include "errors.h"
+// #include "headers/gameStorage.h"
 
 #define BOARD_SIZE 9
 #define VARIATIONS_MAX 5
@@ -32,16 +35,17 @@ class Game{
          actual_move    = first_move;
          move_counter   = 0;
          whos_turn      = MOVE_BLACK;
-         return 0;
+         clean_board();
          return ERROR_NONE;
       } // end - new_game
       
       int move_make(int pos_x, int pos_y){
          actual_move = new move;
          actual_move->key        = move_counter;
-         actual_move->pos_x      = pos_x;
-         actual_move->pos_y      = pos_y;
+         actual_move->pos_x      = pos_x-1;
+         actual_move->pos_y      = pos_y-1;
          actual_move->who_played = whos_turn;
+         board[pos_x][pos_y] = whos_turn;
          move_counter++;
          change_turn();
          return ERROR_NONE;
@@ -67,15 +71,38 @@ class Game{
          return ERROR_NONE;
       } // end - get_board
       
+      int print_board(){
+         cout << "Printing board position." << endl;
+         for (int i=0; i<BOARD_SIZE; i++){
+            for (int j=0; j<BOARD_SIZE; j++){
+               if (board[i][j] == MOVE_BLACK) {
+                  cout << "B";
+                  continue;
+               }
+               if (board[i][j] == MOVE_WHITE) {
+                  cout << "W";
+                  continue;
+               }
+               cout << ".";
+               // if (board[i][j] == MOVE_NONE ) cout << ".";
+            } // end - for horizontal
+            cout << endl;
+         } // end -  for vertical
+         cout << endl;
+      }// end - print_board
+      
       Game(){
          first_move     = NULL;
          actual_move    = first_move;
+         whos_turn      = MOVE_BLACK;
          move_counter   = 0;
+         clean_board();
       } // end - Game constructor
 
    private:
       int move_counter;
       int whos_turn;
+      int board[BOARD_SIZE][BOARD_SIZE];
       
       move *first_move;    // specifies root
       move *actual_move;  // identifies the move
@@ -111,4 +138,14 @@ class Game{
          return ERROR_NONE;
       } // end - change_turn
 
+      int clean_board(){
+         for (int i=0; i<BOARD_SIZE; i++){
+            for (int j=0; j<BOARD_SIZE; j++){
+               board[i][j]=MOVE_NONE;
+            } // horizontal loop
+         } // vertical loop
+      } // end - clean_board
+
 }; // end Game class
+
+#endif
