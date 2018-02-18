@@ -74,3 +74,8 @@ Main commands are supposed to be:
 4. load / save game
 5. help
 6. exit
+
+## Log History so far
+   - 16 Feb: Initial commit and struture definition
+   - 17 Feb: Initial implementation of CLI user interface
+   - 18 Feb: Initial implementation of game storage
