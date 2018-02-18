@@ -6,8 +6,11 @@ This program is meant to be a simple Go game program written in C++ language, wh
 ## TODOs
    - Controller
       - Implement proper state machine model
+      - Implement parallel processing structure
    - User Interface
       - Finish CLI board with cout properly
+      - Implement Python TKinter interface GUI
+      - Implement WebAssembly, HTML and CSS interface GUI
    - Computer AI
       - Implement some random moves generator
       - Implement floodfill algorithm for score estimator
