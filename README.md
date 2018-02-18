@@ -1,5 +1,8 @@
 # GoBot
 
+## Description
+This program is meant to be a simple Go game program written in C++ language, which can play go with a human. At first it will have CLI only. Later a python Qt GUI can be programed.
+
 ## TODOs
    - Controller
       - Implement proper state machine model
@@ -16,9 +19,6 @@
       - Implement communication on HTTP protocol to online-go.com
       - Implement communication with KGS (maybe)
       - find other servers for the bot to play
-
-## Description
-This program is meant to be a simple Go game program written in C++ language, which can play go with a human. At first it will have CLI only. Later a python Qt GUI can be programed.
 
 ## Usage
 test and debug mode only.
