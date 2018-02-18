@@ -2,15 +2,20 @@
 
 ## TODOs
    - Controller
-      - Implement state machine model
+      - Implement proper state machine model
    - User Interface
-      - Implement proper CLI board with cout
+      - Finish CLI board with cout properly
    - Computer AI
       - Implement some random moves generator
       - Implement floodfill algorithm for score estimator
+      - Search a good AI algorithm to implement
    - GameStorage
-      - Implement strutures to store the game history and possible moves
-      - Implement move play and undo
+      - Revise strutures to store the game history and possible moves
+      - Implement undo move
+   - Network Communication Interface
+      - Implement communication on HTTP protocol to online-go.com
+      - Implement communication with KGS (maybe)
+      - find other servers for the bot to play
 
 ## Description
 This program is meant to be a simple Go game program written in C++ language, which can play go with a human. At first it will have CLI only. Later a python Qt GUI can be programed.
