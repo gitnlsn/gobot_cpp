@@ -1,0 +1,17 @@
+To connect an app to OGS, it is necessary to keep a token on the header of html protocol during the communications.
+
+The token can be requested to the OGS APP on host online-go.com and path /oauth2/token, with this sample code:
+
+curl -X POST -d 'grant_type=password&username=OGS_username&password=OGS_password&client_id=ID_OAUTH2_APPS&client_secret=SECRET_OAUTH2_APPS' https://online-go.com/oauth2/token/ --verbose --location password
+
+- Grant type is only supported on 'password' or 'refresh_token' modes. This post argument must be forced.
+- Username is the username created on OGS. It is the same username one uses to play games.
+- Password is the password from the account.
+- Client_id and client_secret both must be requested and created on /developper/applications path.
+
+On those conditions, the token is requested normaly.
+
+
+References:
+https://ogs.docs.apiary.io/#reference/library/request-a-user-token
+https://forums.online-go.com/t/how-can-i-get-an-oauth2-token/10782/7
